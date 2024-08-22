@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const monthSelect = document.getElementById('month');
     const yearSelect = document.getElementById('year');
     const ingredientListDiv = document.getElementById('ingredient-list');
-    
+    const newMealForm = document.getElementById('new-meal-form');
+    const ingredientsContainer = document.getElementById('ingredients-container');
+    let ingredientCounter = 1;
+
     // Meal options list
     const mealOptions = `
         <option value="">Select Meal</option>
@@ -131,4 +134,63 @@ document.addEventListener('DOMContentLoaded', function() {
 
         ingredientListDiv.appendChild(ul);
     }
+
+    // Add new ingredient fields dynamically
+    document.getElementById('add-ingredient-btn').addEventListener('click', function() {
+        ingredientCounter++;
+        const ingredientDiv = document.createElement('div');
+        ingredientDiv.className = 'ingredient-item';
+
+        ingredientDiv.innerHTML = `
+            <label for="ingredient-${ingredientCounter}">Ingredient:</label>
+            <input type="text" id="ingredient-${ingredientCounter}" class="ingredient-name" required>
+            <label for="quantity-${ingredientCounter}">Quantity:</label>
+            <input type="number" id="quantity-${ingredientCounter}" class="ingredient-quantity" required>
+            <label for="unit-${ingredientCounter}">Unit:</label>
+            <input type="text" id="unit-${ingredientCounter}" class="ingredient-unit" required>
+        `;
+        ingredientsContainer.appendChild(ingredientDiv);
+    });
+
+    // Handle new meal submission
+    newMealForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting the usual way
+
+        const mealName = document.getElementById('meal-name').value.trim();
+        if (!mealName) return;
+
+        const newIngredients = [];
+        const ingredientItems = document.querySelectorAll('.ingredient-item');
+        ingredientItems.forEach(function(item) {
+            const ingredientName = item.querySelector('.ingredient-name').value.trim();
+            const ingredientQuantity = parseFloat(item.querySelector('.ingredient-quantity').value);
+            const ingredientUnit = item.querySelector('.ingredient-unit').value.trim();
+
+            if (ingredientName && ingredientQuantity && ingredientUnit) {
+                newIngredients.push({
+                    ingredient: ingredientName,
+                    quantity: ingredientQuantity,
+                    unit: ingredientUnit
+                });
+            }
+        });
+
+        if (newIngredients.length > 0) {
+            mealIngredients[mealName] = newIngredients;
+
+            // Update the meal dropdown options in the calendar
+            const newOption = document.createElement('option');
+            newOption.value = mealName;
+            newOption.textContent = mealName;
+
+            document.querySelectorAll('.meal-dropdown').forEach(function(dropdown) {
+                dropdown.appendChild(newOption.cloneNode(true));
+            });
+
+            // Reset the form for new entry
+            newMealForm.reset();
+            ingredientsContainer.innerHTML = ''; // Clear previous ingredient inputs
+            ingredientCounter = 1; // Reset counter
+        }
+    });
 });
