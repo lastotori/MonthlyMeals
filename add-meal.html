@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Meal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Add a New Meal</h1>
+    <form id="new-meal-form">
+        <label for="meal-name">Meal Name:</label>
+        <input type="text" id="meal-name" required>
+
+        <h3>Ingredients</h3>
+        <div id="ingredients-container">
+            <div class="ingredient-item">
+                <label for="ingredient-1">Ingredient:</label>
+                <input type="text" id="ingredient-1" class="ingredient-name" required>
+                <label for="quantity-1">Quantity:</label>
+                <input type="number" id="quantity-1" class="ingredient-quantity" required>
+                <label for="unit-1">Unit:</label>
+                <input type="text" id="unit-1" class="ingredient-unit" required>
+            </div>
+        </div>
+        <button type="button" id="add-ingredient-btn">Add Another Ingredient</button>
+        <button type="submit">Add Meal</button>
+    </form>
+    <a href="/">Back to Meal Planner</a>
+    <script src="add-meal.js"></script>
+</body>
+</html>
