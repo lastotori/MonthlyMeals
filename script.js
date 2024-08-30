@@ -49,7 +49,23 @@ document.addEventListener('DOMContentLoaded', function() {
             { ingredient: "Bullion", quantity: 1, unit: "pcs" },
             { ingredient: "leek", quantity: 2, unit: "stalks" },
              { ingredient: "Bread", quantity: 1, unit: "loaf" }
-        ]
+        ],
+        "Fancy Potatoes": [
+            { ingredient: "Potato", quantity: 3, unit: "pcs" },
+            { ingredient: "Bullion", quantity: 1, unit: "pcs" },
+            { ingredient: "Thyme", quantity: 1, unit: "tsp" },
+            { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
+            { ingredient: "Meat", quantity: 3, unit: "pcs" }
+        ],
+        "Mashed Potatoes": [
+            { ingredient: "Potato", quantity: 3, unit: "pcs" },
+            { ingredient: "Soy Sauce", quantity: 4, unit: "tbsp" },
+            { ingredient: "Mushroom Powder", quantity: 1, unit: "tsp" },
+            { ingredient: "Garlic Powder", quantity: 1, unit: "tsp" },
+            { ingredient: "Onion Powder", quantity: 1, unit: "tsp" },
+            { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
+            { ingredient: "Meat", quantity: 3, unit: "pcs" }
+        ],
     "Corn Chowder": [
             { ingredient: "Potato", quantity: 3, unit: "pcs" },
             { ingredient: "Bullion", quantity: 1, unit: "pcs" },
@@ -99,6 +115,15 @@ document.addEventListener('DOMContentLoaded', function() {
             { ingredient: "Mixed Vegetables", quantity: 1, unit: "cup" },
             { ingredient: "Coconut Milk", quantity: 1, unit: "can" },
             { ingredient: "palm Sugar", quantity: 1, unit: "tbsp" }
+        ],
+        "Fish and Grape Sauce": [
+            { ingredient: "Fish", quantity: 3, unit: "pcs" },
+            { ingredient: "Maple Syrup", quantity: 1, unit: "tbsp" },
+            { ingredient: "Lemon Juice", quantity: 2, unit: "tsp" },
+            { ingredient: "Quinoa", quantity: 2, unit: "cup" },
+            { ingredient: "Grapes", quantity: 1, unit: "cup" },
+            { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
+            { ingredient: "Pumpkin Seeds", quantity: 1, unit: "tbsp" }
         ],
     };
 
