@@ -32,21 +32,31 @@ document.addEventListener('DOMContentLoaded', function() {
             { ingredient: "American Cheese", quantity: 3, unit: "pcs" }
         ],
         "Grilled Fish": [
-            { ingredient: "Fish Fillet", quantity: 2, unit: "pcs" },
-            { ingredient: "Lemon", quantity: 1, unit: "pcs" },
-            { ingredient: "Olive Oil", quantity: 2, unit: "tbsp" }
+            { ingredient: "Fish", quantity: 1, unit: "pcs" },
+            { ingredient: "Potato", quantity: 3, unit: "pcs" },
+            { ingredient: "Carrots", quantity: 2, unit: "pcs" }
+            { ingredient: "Meat", quantity: 3, unit: "pcs" }
         ],
-        "Vegetable Stir-Fry": [
-            { ingredient: "Mixed Vegetables", quantity: 300, unit: "g" },
+        "Stir-Fry": [
+            { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
             { ingredient: "Soy Sauce", quantity: 3, unit: "tbsp" },
-            { ingredient: "Garlic", quantity: 2, unit: "cloves" }
+            { ingredient: "Rice", quantity: 2, unit: "cup" }
+            { ingredient: "Tofu", quantity: 1, unit: "block" }
+            { ingredient: "Meat", quantity: 3, unit: "pcs" }
         ],
-        "Chicken Soup": [
-            { ingredient: "Chicken Breast", quantity: 200, unit: "g" },
-            { ingredient: "Carrot", quantity: 2, unit: "pcs" },
-            { ingredient: "Celery", quantity: 2, unit: "stalks" },
-            { ingredient: "Chicken Broth", quantity: 4, unit: "cups" }
+        "Potato Soup": [
+            { ingredient: "Potato", quantity: 3, unit: "pcs" },
+            { ingredient: "Bullion", quantity: 1, unit: "pcs" },
+            { ingredient: "leek", quantity: 2, unit: "stalks" },
+             { ingredient: "Bread", quantity: 1, unit: "loaf" }
         ]
+    "Fried Rice": [
+            { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
+            { ingredient: "Soy Sauce", quantity: 3, unit: "tbsp" },
+            { ingredient: "Rice", quantity: 2, unit: "cup" }
+            { ingredient: "Tofu", quantity: 1, unit: "block" }
+            { ingredient: "Meat", quantity: 3, unit: "pcs" }
+        ],
     };
 
     // Generate year options
