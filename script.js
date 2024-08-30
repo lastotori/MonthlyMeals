@@ -10,11 +10,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Meal options list
     const mealOptions = `
         <option value="">Select Meal</option>
-        <option value="Pasta">Pasta</option>
-        <option value="Salad">Salad</option>
+        <option value="Pesto">Pesto</option>
+        <option value="Burgers">Burgers</option>
         <option value="Grilled Fish">Grilled Fish</option>
-        <option value="Vegetable Stir-Fry">Vegetable Stir-Fry</option>
-        <option value="Chicken Soup">Chicken Soup</option>
+        <option value="Stir-Fry">Stir-Fry</option>
+        <option value="Potato Soup">Potato Soup</option>
+        <option value="Fancy Potatoes">Fancy Potatoes</option>
+        <option value="Mashed Potatoes">Mashed Potatoes</option>
+        <option value="Corn Chowder">Corn Chowder</option>
+        <option value="Fried Rice">Fried Rice</option>
+        <option value="Cassarole">Cassarole</option>
+        <option value="Rice and Beans">Rice and Beans</option>
+        <option value="Carbonara">Carbonara</option>
+        <option value="Mac and Cheese">Mac and Cheese</option>
+        <option value="Curry">Curry</option>
+        <option value="Fish and Grape Sauce">Fish and Grape Sauce</option>
     `;
 
     // Ingredients data for each meal
