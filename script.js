@@ -19,16 +19,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Ingredients data for each meal
     const mealIngredients = {
-        "Pasta": [
-            { ingredient: "Pasta", quantity: 200, unit: "g" },
-            { ingredient: "Tomato Sauce", quantity: 1, unit: "cup" },
-            { ingredient: "Parmesan Cheese", quantity: 50, unit: "g" }
+        "Pesto": [
+            { ingredient: "Pasta", quantity: 2, unit: "cup" },
+            { ingredient: "Pesto", quantity: 1, unit: "cup" },
+            { ingredient: "Bread", quantity: 1, unit: "loaf" }
         ],
-        "Salad": [
-            { ingredient: "Lettuce", quantity: 1, unit: "head" },
-            { ingredient: "Tomato", quantity: 2, unit: "pcs" },
-            { ingredient: "Cucumber", quantity: 1, unit: "pcs" },
-            { ingredient: "Olive Oil", quantity: 2, unit: "tbsp" }
+        "Burgers": [
+            { ingredient: "Lettuce", quantity: 0.25, unit: "head" },
+            { ingredient: "Burger", quantity: 4, unit: "pcs" },
+            { ingredient: "Veggie Burger", quantity: 2, unit: "pcs" },
+            { ingredient: "Buns", quantity: 4, unit: "pcs" }
+            { ingredient: "American Cheese", quantity: 3, unit: "pcs" }
         ],
         "Grilled Fish": [
             { ingredient: "Fish Fillet", quantity: 2, unit: "pcs" },
