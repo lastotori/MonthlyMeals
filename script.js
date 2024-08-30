@@ -27,115 +27,115 @@ document.addEventListener('DOMContentLoaded', function() {
         <option value="Fish and Grape Sauce">Fish and Grape Sauce</option>
     `;
 
-    // Ingredients data for each meal
-    const mealIngredients = {
-        "Pesto": [
-            { ingredient: "Pasta", quantity: 2, unit: "cup" },
-            { ingredient: "Pesto", quantity: 1, unit: "cup" },
-            { ingredient: "Bread", quantity: 1, unit: "loaf" }
-        ],
-        "Burgers": [
-            { ingredient: "Lettuce", quantity: 0.25, unit: "head" },
-            { ingredient: "Burger", quantity: 4, unit: "pcs" },
-            { ingredient: "Veggie Burger", quantity: 2, unit: "pcs" },
-            { ingredient: "Buns", quantity: 4, unit: "pcs" },
-            { ingredient: "American Cheese", quantity: 3, unit: "pcs" }
-        ],
-        "Grilled Fish": [
-            { ingredient: "Fish", quantity: 1, unit: "pcs" },
-            { ingredient: "Potato", quantity: 3, unit: "pcs" },
-            { ingredient: "Carrots", quantity: 2, unit: "pcs" },
-            { ingredient: "Meat", quantity: 3, unit: "pcs" }
-        ],
-        "Stir-Fry": [
-            { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
-            { ingredient: "Soy Sauce", quantity: 3, unit: "tbsp" },
-            { ingredient: "Rice", quantity: 2, unit: "cup" },
-            { ingredient: "Tofu", quantity: 1, unit: "block" },
-            { ingredient: "Meat", quantity: 3, unit: "pcs" }
-        ],
-        "Potato Soup": [
-            { ingredient: "Potato", quantity: 3, unit: "pcs" },
-            { ingredient: "Bullion", quantity: 1, unit: "pcs" },
-            { ingredient: "leek", quantity: 2, unit: "stalks" },
-             { ingredient: "Bread", quantity: 1, unit: "loaf" }
-        ],
-        "Fancy Potatoes": [
-            { ingredient: "Potato", quantity: 3, unit: "pcs" },
-            { ingredient: "Bullion", quantity: 1, unit: "pcs" },
-            { ingredient: "Thyme", quantity: 1, unit: "tsp" },
-            { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
-            { ingredient: "Meat", quantity: 3, unit: "pcs" }
-        ],
-        "Mashed Potatoes": [
-            { ingredient: "Potato", quantity: 3, unit: "pcs" },
-            { ingredient: "Soy Sauce", quantity: 4, unit: "tbsp" },
-            { ingredient: "Mushroom Powder", quantity: 1, unit: "tsp" },
-            { ingredient: "Garlic Powder", quantity: 1, unit: "tsp" },
-            { ingredient: "Onion Powder", quantity: 1, unit: "tsp" },
-            { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
-            { ingredient: "Meat", quantity: 3, unit: "pcs" }
-        ],
+   // Ingredients data for each meal
+const mealIngredients = {
+    "Pesto": [
+        { ingredient: "Pasta", quantity: 2, unit: "cup" },
+        { ingredient: "Pesto", quantity: 1, unit: "cup" },
+        { ingredient: "Bread", quantity: 1, unit: "loaf" }
+    ],
+    "Burgers": [
+        { ingredient: "Lettuce", quantity: 0.25, unit: "head" },
+        { ingredient: "Burger", quantity: 4, unit: "pcs" },
+        { ingredient: "Veggie Burger", quantity: 2, unit: "pcs" },
+        { ingredient: "Buns", quantity: 4, unit: "pcs" },
+        { ingredient: "American Cheese", quantity: 3, unit: "pcs" }
+    ],
+    "Grilled Fish": [
+        { ingredient: "Fish", quantity: 1, unit: "pcs" },
+        { ingredient: "Potato", quantity: 3, unit: "pcs" },
+        { ingredient: "Carrots", quantity: 2, unit: "pcs" },
+        { ingredient: "Meat", quantity: 3, unit: "pcs" }
+    ],
+    "Stir-Fry": [
+        { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
+        { ingredient: "Soy Sauce", quantity: 3, unit: "tbsp" },
+        { ingredient: "Rice", quantity: 2, unit: "cup" },
+        { ingredient: "Tofu", quantity: 1, unit: "block" },
+        { ingredient: "Meat", quantity: 3, unit: "pcs" }
+    ],
+    "Potato Soup": [
+        { ingredient: "Potato", quantity: 3, unit: "pcs" },
+        { ingredient: "Bullion", quantity: 1, unit: "pcs" },
+        { ingredient: "Leek", quantity: 2, unit: "stalks" },
+        { ingredient: "Bread", quantity: 1, unit: "loaf" }
+    ],
+    "Fancy Potatoes": [
+        { ingredient: "Potato", quantity: 3, unit: "pcs" },
+        { ingredient: "Bullion", quantity: 1, unit: "pcs" },
+        { ingredient: "Thyme", quantity: 1, unit: "tsp" },
+        { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
+        { ingredient: "Meat", quantity: 3, unit: "pcs" }
+    ],
+    "Mashed Potatoes": [
+        { ingredient: "Potato", quantity: 3, unit: "pcs" },
+        { ingredient: "Soy Sauce", quantity: 4, unit: "tbsp" },
+        { ingredient: "Mushroom Powder", quantity: 1, unit: "tsp" },
+        { ingredient: "Garlic Powder", quantity: 1, unit: "tsp" },
+        { ingredient: "Onion Powder", quantity: 1, unit: "tsp" },
+        { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
+        { ingredient: "Meat", quantity: 3, unit: "pcs" }
+    ],
     "Corn Chowder": [
-            { ingredient: "Potato", quantity: 3, unit: "pcs" },
-            { ingredient: "Bullion", quantity: 1, unit: "pcs" },
-            { ingredient: "onion", quantity: 1, unit: "pcs" },
-             { ingredient: "Bread", quantity: 1, unit: "loaf" },
+        { ingredient: "Potato", quantity: 3, unit: "pcs" },
+        { ingredient: "Bullion", quantity: 1, unit: "pcs" },
+        { ingredient: "Onion", quantity: 1, unit: "pcs" },
+        { ingredient: "Bread", quantity: 1, unit: "loaf" },
         { ingredient: "Corn", quantity: 1, unit: "cup" }
-        ]
+    ],
     "Fried Rice": [
-            { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
-            { ingredient: "Soy Sauce", quantity: 3, unit: "tbsp" },
-            { ingredient: "Rice", quantity: 2, unit: "cup" },
-            { ingredient: "Tofu", quantity: 1, unit: "block" },
-            { ingredient: "Meat", quantity: 3, unit: "pcs" }
-        ],
-             "Cassarole": [
-            { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
-            { ingredient: "Bullion", quantity: 1, unit: "pcs" },
-            { ingredient: "Rice", quantity: 2, unit: "cup" },
-            { ingredient: "Cheese", quantity: 0.25, unit: "cup" },
-            { ingredient: "Meat", quantity: 3, unit: "pcs" }
-        ],
-            "Rice and Beans": [
-            { ingredient: "beans", quantity: 2, unit: "cup" },
-            { ingredient: "Rice", quantity: 2, unit: "cup" },
-            { ingredient: "Cheese", quantity: 0.25, unit: "cup" },
-            { ingredient: "Meat", quantity: 3, unit: "pcs" }
-        ],
-            "Carbonara": [
-            { ingredient: "Pasta", quantity: 2, unit: "cup" },
-            { ingredient: "Parm", quantity: 1, unit: "cup" },
-            { ingredient: "Bread", quantity: 1, unit: "loaf" },
-            { ingredient: "Meat", quantity: 3, unit: "pcs" }
-        ],
-             "Mac and Cheese": [
-            { ingredient: "Pasta", quantity: 2, unit: "cup" },
-            { ingredient: "cheese", quantity: 2, unit: "cup" },
-            { ingredient: "Bread crumbs", quantity: 1, unit: "tbsp" },
-            { ingredient: "Meat", quantity: 3, unit: "pcs" }
-        ],
-            "Curry": [
-            { ingredient: "Sweet Potato", quantity: 1, unit: "pcs" },
-            { ingredient: "Carrot", quantity: 2, unit: "pcs" },
-            { ingredient: "Curry Paste", quantity: 1, unit: "tbsp" },
-            { ingredient: "Curry Powder", quantity: 2, unit: "tsp" },
-            { ingredient: "Rice", quantity: 2, unit: "cup" },
-            { ingredient: "Tofu", quantity: 1, unit: "block" },
-            { ingredient: "Mixed Vegetables", quantity: 1, unit: "cup" },
-            { ingredient: "Coconut Milk", quantity: 1, unit: "can" },
-            { ingredient: "palm Sugar", quantity: 1, unit: "tbsp" }
-        ],
-        "Fish and Grape Sauce": [
-            { ingredient: "Fish", quantity: 3, unit: "pcs" },
-            { ingredient: "Maple Syrup", quantity: 1, unit: "tbsp" },
-            { ingredient: "Lemon Juice", quantity: 2, unit: "tsp" },
-            { ingredient: "Quinoa", quantity: 2, unit: "cup" },
-            { ingredient: "Grapes", quantity: 1, unit: "cup" },
-            { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
-            { ingredient: "Pumpkin Seeds", quantity: 1, unit: "tbsp" }
-        ],
-    };
+        { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
+        { ingredient: "Soy Sauce", quantity: 3, unit: "tbsp" },
+        { ingredient: "Rice", quantity: 2, unit: "cup" },
+        { ingredient: "Tofu", quantity: 1, unit: "block" },
+        { ingredient: "Meat", quantity: 3, unit: "pcs" }
+    ],
+    "Cassarole": [
+        { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
+        { ingredient: "Bullion", quantity: 1, unit: "pcs" },
+        { ingredient: "Rice", quantity: 2, unit: "cup" },
+        { ingredient: "Cheese", quantity: 0.25, unit: "cup" },
+        { ingredient: "Meat", quantity: 3, unit: "pcs" }
+    ],
+    "Rice and Beans": [
+        { ingredient: "Beans", quantity: 2, unit: "cup" },
+        { ingredient: "Rice", quantity: 2, unit: "cup" },
+        { ingredient: "Cheese", quantity: 0.25, unit: "cup" },
+        { ingredient: "Meat", quantity: 3, unit: "pcs" }
+    ],
+    "Carbonara": [
+        { ingredient: "Pasta", quantity: 2, unit: "cup" },
+        { ingredient: "Parm", quantity: 1, unit: "cup" },
+        { ingredient: "Bread", quantity: 1, unit: "loaf" },
+        { ingredient: "Meat", quantity: 3, unit: "pcs" }
+    ],
+    "Mac and Cheese": [
+        { ingredient: "Pasta", quantity: 2, unit: "cup" },
+        { ingredient: "Cheese", quantity: 2, unit: "cup" },
+        { ingredient: "Bread Crumbs", quantity: 1, unit: "tbsp" },
+        { ingredient: "Meat", quantity: 3, unit: "pcs" }
+    ],
+    "Curry": [
+        { ingredient: "Sweet Potato", quantity: 1, unit: "pcs" },
+        { ingredient: "Carrot", quantity: 2, unit: "pcs" },
+        { ingredient: "Curry Paste", quantity: 1, unit: "tbsp" },
+        { ingredient: "Curry Powder", quantity: 2, unit: "tsp" },
+        { ingredient: "Rice", quantity: 2, unit: "cup" },
+        { ingredient: "Tofu", quantity: 1, unit: "block" },
+        { ingredient: "Mixed Vegetables", quantity: 1, unit: "cup" },
+        { ingredient: "Coconut Milk", quantity: 1, unit: "can" },
+        { ingredient: "Palm Sugar", quantity: 1, unit: "tbsp" }
+    ],
+    "Fish and Grape Sauce": [
+        { ingredient: "Fish", quantity: 3, unit: "pcs" },
+        { ingredient: "Maple Syrup", quantity: 1, unit: "tbsp" },
+        { ingredient: "Lemon Juice", quantity: 2, unit: "tsp" },
+        { ingredient: "Quinoa", quantity: 2, unit: "cup" },
+        { ingredient: "Grapes", quantity: 1, unit: "cup" },
+        { ingredient: "Mixed Vegetables", quantity: 2, unit: "cup" },
+        { ingredient: "Pumpkin Seeds", quantity: 1, unit: "tbsp" }
+    ],
+};
 
     // Generate year options
     const currentYear = new Date().getFullYear();
