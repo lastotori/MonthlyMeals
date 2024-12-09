@@ -283,3 +283,60 @@ const mealIngredients = {
         }
     });
 });
+// Calories per serving data
+const calorieData = [
+    { meal: "Pesto", calories: 600 },
+    { meal: "Burgers", calories: 578 },
+    { meal: "Grilled Fish", calories: 325 },
+    { meal: "Stir-Fry", calories: 370 },
+    { meal: "Potato Soup", calories: 428 },
+    { meal: "Fancy Potatoes", calories: 291 },
+    { meal: "Mashed Potatoes", calories: 303 },
+    { meal: "Corn Chowder", calories: 460 },
+    { meal: "Fried Rice", calories: 370 },
+    { meal: "Cassarole", calories: 305 },
+    { meal: "Rice and Beans", calories: 390 },
+    { meal: "Carbonara", calories: 658 },
+    { meal: "Mac and Cheese", calories: 463 },
+    { meal: "Curry", calories: 369 },
+    { meal: "Fish and Grape Sauce", calories: 330 },
+];
+
+// Function to generate calorie table
+function generateCalorieTable() {
+    const table = document.createElement('table');
+    table.style.width = '100%';
+    table.style.borderCollapse = 'collapse';
+
+    // Create table header
+    const header = table.createTHead();
+    const headerRow = header.insertRow();
+    const headers = ['Meal', 'Calories per Serving'];
+    headers.forEach(headerText => {
+        const th = document.createElement('th');
+        th.textContent = headerText;
+        th.style.border = '1px solid black';
+        th.style.padding = '8px';
+        headerRow.appendChild(th);
+    });
+
+    // Create table body
+    const tbody = table.createTBody();
+    calorieData.forEach(data => {
+        const row = tbody.insertRow();
+        const mealCell = row.insertCell();
+        const caloriesCell = row.insertCell();
+        mealCell.textContent = data.meal;
+        caloriesCell.textContent = data.calories;
+        mealCell.style.border = '1px solid black';
+        caloriesCell.style.border = '1px solid black';
+        mealCell.style.padding = '8px';
+        caloriesCell.style.padding = '8px';
+    });
+
+    // Append the table to the bottom of the page
+    document.body.appendChild(table);
+}
+
+// Call the function to add the table
+generateCalorieTable();
