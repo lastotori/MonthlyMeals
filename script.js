@@ -183,32 +183,39 @@ const mealIngredients = {
     // Generate the initial calendar
     generateCalendar();
     
-    document.getElementById('save-btn').addEventListener('click', function() {
-        const selectedMeals = {};
-        document.querySelectorAll('.day').forEach(function(day) {
-            const dayId = day.id;
-            const selectedMeal = day.querySelector('.meal-dropdown').value;
-            selectedMeals[dayId] = selectedMeal;
-        });
-        
-        const ingredientList = {};
-
-        // Aggregate ingredients for all selected meals
-        Object.values(selectedMeals).forEach(function(meal) {
-            if (meal && mealIngredients[meal]) {
-                mealIngredients[meal].forEach(function(ingredient) {
-                    const { ingredient: name, quantity, unit } = ingredient;
-                    if (!ingredientList[name]) {
-                        ingredientList[name] = { quantity: 0, unit: unit };
-                    }
-                    ingredientList[name].quantity += quantity;
-                });
-            }
-        });
-
-        // Display the ingredient list at the bottom of the page
-        displayIngredients(ingredientList);
+  document.getElementById('save-btn').addEventListener('click', function () {
+    const selectedMeals = {};
+    document.querySelectorAll('.day').forEach(function (day) {
+        const dayId = day.id;
+        const selectedMeal = day.querySelector('.meal-dropdown').value;
+        selectedMeals[dayId] = selectedMeal;
     });
+
+    const ingredientList = {};
+
+    // Aggregate ingredients for all selected meals
+    Object.values(selectedMeals).forEach(function (meal) {
+        if (meal && mealIngredients[meal]) {
+            mealIngredients[meal].forEach(function (ingredient) {
+                const { ingredient: name, quantity, unit } = ingredient;
+                if (!ingredientList[name]) {
+                    ingredientList[name] = { quantity: 0, unit: unit };
+                }
+                ingredientList[name].quantity += quantity;
+            });
+        }
+    });
+
+    // Save the selected meals and ingredients to LocalStorage
+    const savedPlans = JSON.parse(localStorage.getItem('mealPlans')) || [];
+    savedPlans.push({ selectedMeals, ingredientList });
+    localStorage.setItem('mealPlans', JSON.stringify(savedPlans));
+
+    // Display the ingredient list at the bottom of the page
+    displayIngredients(ingredientList);
+
+    alert('Meal plan saved!');
+});
 
     function displayIngredients(ingredientList) {
         ingredientListDiv.innerHTML = ''; // Clear previous list
