@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <option value="">Select Meal</option>
         <option value="Pesto">Pesto</option>
         <option value="Burgers">Burgers</option>
+        <option value="Pasta">Pasta</option>
+        <option value="Enchilada">Enchilada</option>
         <option value="Grilled Fish">Grilled Fish</option>
         <option value="Stir-Fry">Stir-Fry</option>
         <option value="Potato Soup">Potato Soup</option>
@@ -33,6 +35,18 @@ const mealIngredients = {
         { ingredient: "Pasta", quantity: 2, unit: "cup" },
         { ingredient: "Pesto", quantity: 1, unit: "cup" },
         { ingredient: "Bread", quantity: 1, unit: "loaf" }
+    ],
+    "Enchilada": [
+        { ingredient: "Tortillas", quantity: 8, unit: "pcs" },
+        { ingredient: "Refried black Beans", quantity: 1, unit: "can" },
+        { ingredient: "Cheese", quantity: 2, unit: "cup" },
+        { ingredient: "Enchilada Sauce", quantity: 1, unit: "cup" },
+    ],
+    "Pasta": [
+        { ingredient: "Pasta", quantity: 2, unit: "cup" },
+        { ingredient: "Parm", quantity: 1, unit: "cup" },
+        { ingredient: "Bread", quantity: 1, unit: "loaf" }
+        { ingredient: "Meatballs", quantity: 12, unit: "pcs" }
     ],
     "Burgers": [
         { ingredient: "Lettuce", quantity: 0.25, unit: "head" },
