@@ -27,10 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
         <option value="Mac and Cheese">Mac and Cheese</option>
         <option value="Curry">Curry</option>
         <option value="Fish and Grape Sauce">Fish and Grape Sauce</option>
+        <option value="Pizza">Pizza</option>
     `;
 
    // Ingredients data for each meal
 const mealIngredients = {
+     "Pizza": [
+    ],
     "Pesto": [
         { ingredient: "Pasta", quantity: 2, unit: "cup" },
         { ingredient: "Pesto", quantity: 1, unit: "cup" },
