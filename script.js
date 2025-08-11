@@ -267,10 +267,10 @@ function randomizeMeals() {
 }
 
 // Attach button event
-document.getElementById('randomize-btn').addEventListener('click', randomizeMeals);
-
- }
-    }
+document.getElementById('randomize-btn').addEventListener('click', () => {
+    randomizeMeals();
+    updateCellColors();
+});
 
     // Event listeners to regenerate the calendar when month/year is changed
     monthSelect.addEventListener('change', generateCalendar);
@@ -443,6 +443,5 @@ function generateCalorieTable() {
 
 // Call the function to add the table
 generateCalorieTable();
-
 
 
