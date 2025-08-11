@@ -48,7 +48,7 @@ const mealIngredients = {
     "Pasta": [
         { ingredient: "Pasta", quantity: 2, unit: "cup" },
         { ingredient: "Parm", quantity: 1, unit: "cup" },
-        { ingredient: "Bread", quantity: 1, unit: "loaf" }
+        { ingredient: "Bread", quantity: 1, unit: "loaf" },
         { ingredient: "Meatballs", quantity: 12, unit: "pcs" }
     ],
     "Burgers": [
@@ -364,3 +364,4 @@ function generateCalorieTable() {
 
 // Call the function to add the table
 generateCalorieTable();
+
