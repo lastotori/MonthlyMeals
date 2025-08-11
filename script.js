@@ -165,32 +165,52 @@ const mealIngredients = {
     yearSelect.value = currentYear;
 
     // Function to generate the calendar days
-    function generateCalendar() {
-        calendar.innerHTML = ''; // Clear previous calendar
+  function generateCalendar() {
+    calendar.innerHTML = ''; // Clear previous calendar
 
-        const month = parseInt(monthSelect.value);
-        const year = parseInt(yearSelect.value);
+    const month = parseInt(monthSelect.value);
+    const year = parseInt(yearSelect.value);
 
-        // Get the number of days in the selected month
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        // Create day elements
-        for (let day = 1; day <= daysInMonth; day++) {
-            const dayDiv = document.createElement('div');
-            dayDiv.className = 'day';
-            dayDiv.id = `day-${day}`;
-            
-            const dayLabel = document.createElement('span');
-            dayLabel.textContent = `Day ${day}`;
-            dayDiv.appendChild(dayLabel);
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayDiv = document.createElement('div');
+        dayDiv.className = 'day';
+        dayDiv.id = `day-${day}`;
+        
+        const dayLabel = document.createElement('span');
+        dayLabel.textContent = `Day ${day}`;
+        dayDiv.appendChild(dayLabel);
 
-            const mealDropdown = document.createElement('select');
-            mealDropdown.className = 'meal-dropdown';
-            mealDropdown.innerHTML = mealOptions; // Use the same meal options
-            dayDiv.appendChild(mealDropdown);
+        const mealDropdown = document.createElement('select');
+        mealDropdown.className = 'meal-dropdown';
+        mealDropdown.innerHTML = mealOptions;
+        dayDiv.appendChild(mealDropdown);
 
-            calendar.appendChild(dayDiv);
-        }
+        // When a meal is selected, check ingredients and change color
+        mealDropdown.addEventListener('change', () => {
+            const selectedMeal = mealDropdown.value;
+            dayDiv.style.backgroundColor = ''; // reset
+
+            if (mealIngredients[selectedMeal]) {
+                const ingredients = mealIngredients[selectedMeal].map(i => i.ingredient.toLowerCase());
+
+                if (ingredients.some(i => i.includes('pasta'))) {
+                    dayDiv.style.backgroundColor = '#f5deb3'; // yellow-tan
+                } 
+                else if (ingredients.some(i => i.includes('rice'))) {
+                    dayDiv.style.backgroundColor = '#b0e0e6'; // pale blue
+                } 
+                else if (ingredients.some(i => i.includes('soup'))) {
+                    dayDiv.style.backgroundColor = '#98fb98'; // pale green
+                }
+            }
+        });
+
+        calendar.appendChild(dayDiv);
+    }
+}
+ }
     }
 
     // Event listeners to regenerate the calendar when month/year is changed
@@ -364,4 +384,5 @@ function generateCalorieTable() {
 
 // Call the function to add the table
 generateCalorieTable();
+
 
