@@ -61,7 +61,7 @@ const mealIngredients = {
     "Grilled Fish": [
         { ingredient: "Fish", quantity: 1, unit: "pcs" },
         { ingredient: "Potato", quantity: 3, unit: "pcs" },
-        { ingredient: "Carrots", quantity: 2, unit: "pcs" },
+        { ingredient: "Carrot", quantity: 2, unit: "pcs" },
         { ingredient: "Meat", quantity: 3, unit: "pcs" }
     ],
     "Stir-Fry": [
@@ -443,5 +443,6 @@ function generateCalorieTable() {
 
 // Call the function to add the table
 generateCalorieTable();
+
 
 
