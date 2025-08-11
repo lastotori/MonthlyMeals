@@ -210,6 +210,65 @@ const mealIngredients = {
         calendar.appendChild(dayDiv);
     }
 }
+
+    // Helper functions
+function isPastaMeal(meal) {
+    return mealIngredients[meal]?.some(i => i.ingredient.toLowerCase().includes('pasta'));
+}
+
+function isRiceMeal(meal) {
+    return mealIngredients[meal]?.some(i => i.ingredient.toLowerCase().includes('rice'));
+}
+
+function randomizeMeals() {
+    const days = document.querySelectorAll('.meal-dropdown');
+    const allMeals = Object.keys(mealIngredients).filter(m => m !== 'Pizza'); // exclude pizza from random pool
+    const chosenMeals = []; // track meals for repeat rule
+
+    for (let dayIndex = 0; dayIndex < days.length; dayIndex++) {
+        let dropdown = days[dayIndex];
+
+        // Rule 1: Every 7th day is Pizza
+        if ((dayIndex + 1) % 7 === 0) {
+            dropdown.value = "Pizza";
+            chosenMeals.push("Pizza");
+            continue;
+        }
+
+        let meal;
+        let tries = 0;
+        do {
+            meal = allMeals[Math.floor(Math.random() * allMeals.length)];
+            tries++;
+
+            // Rule 2: No repeats within 8 days
+            let recentMeals = chosenMeals.slice(-8);
+            if (recentMeals.includes(meal)) continue;
+
+            // Rule 3: Pasta dishes can't be consecutive
+            if (dayIndex > 0) {
+                let prevMeal = days[dayIndex - 1].value;
+                if (isPastaMeal(meal) && isPastaMeal(prevMeal)) continue;
+            }
+
+            // Rule 4: Rice dishes can't be consecutive
+            if (dayIndex > 0) {
+                let prevMeal = days[dayIndex - 1].value;
+                if (isRiceMeal(meal) && isRiceMeal(prevMeal)) continue;
+            }
+
+            // Passed all checks
+            break;
+        } while (tries < 100); // avoid infinite loops
+
+        dropdown.value = meal;
+        chosenMeals.push(meal);
+    }
+}
+
+// Attach button event
+document.getElementById('randomize-btn').addEventListener('click', randomizeMeals);
+
  }
     }
 
@@ -384,5 +443,6 @@ function generateCalorieTable() {
 
 // Call the function to add the table
 generateCalorieTable();
+
 
 
